@@ -6,6 +6,10 @@
 1. Run `docker-compose up` to run the rails app
 2. hit `http://0.0.0.0:3000`
 
+## Run bash and run the rails app (another way)
+1. `docker-compose run --rm --service-port web bash`
+2. `rails s -b 0.0.0.0`
+
 ## Debugging the Rails App
 
 1. Add `binding.pry` or `byebug` in your code where you want to put the breakpoint.

@@ -12,6 +12,11 @@
 2. Run `docker-compose run --service-port --rm web` in your console to run the rails app in Debug mode
 3. Access the endpoint you are debugging to go into debugging mode in pry or byebug
 
+## Setting up database
+1. docker-compose run web rake db:create
+2. docker-compose run web rails db:migrate
+3. docker-compose run web rails db:migrate RAILS_ENV=test
+
 ## Rails CHEATSHEET using docker
 
 1. `docker-compose run --rm web rails new . --force --no-deps --database=postgresql`

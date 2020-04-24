@@ -9,6 +9,7 @@ $gray-medium-light: #eaeaea;
 
 body {
   padding-top: 60px;
+  background-color: $gray-medium-light;
 }
 
 section {
@@ -72,29 +73,12 @@ p {
 }
 
 /* footer */
-
 footer {
-  margin-top: 45px;
-  padding-top: 5px;
-  border-top: 1px solid $gray-medium-light;
-  color: $gray-light;
-  a {
-    color: $gray;
-    &:hover {
-      color: $gray-darker;
-    }
-  }
-  small {
-    float: left;
-  }
-  ul {
-    float: right;
-    list-style: none;
-    li {
-      float: left;
-      margin-left: 15px;
-    }
-  }
+  margin-top: 3vh;
+  padding: 2vh;
+  text-align: center;
+  background-color: #333333;
+  color: white;
 }
 
 @mixin box_sizing {
@@ -176,4 +160,15 @@ input {
   .form-control {
     color: $state-danger-text;
   }
+}
+
+/* Signup */
+
+.signup-div {
+  background-color: white;
+  width: 70vh;
+  padding: 3vh;
+  margin: auto;
+  margin-top: 15vh;
+  margin-bottom: 14vh;
 }

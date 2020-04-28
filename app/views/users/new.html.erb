@@ -1,5 +1,5 @@
 <% provide(:title, 'Sign up') %>
-<div class="signup-div">
+<div class="white-div">
   <h1>Sign up</h1>
   <%= form_for(@user, url: signup_path) do |f| %>
     <%= render 'shared/error_messages' %>
@@ -17,5 +17,7 @@
     <%= f.text_field :mobile, class: 'form-control' %>
 
     <%= f.submit "Create my account", class: "btn btn-primary" %>
+
+    <%= link_to "already a user?", login_path %>
   <% end %>
 </div>

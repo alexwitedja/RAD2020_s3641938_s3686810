@@ -10,6 +10,11 @@
 
     <%= f.submit "Log in", class: "btn btn-primary" %>
 
+    <%= f.label :remember_me, class: "checkbox inline" do %>
+      <%= f.check_box :remember_me %>
+      <span>Remember me</span>
+    <% end %>
+
     <%= link_to "register", signup_path %>
   <% end %>
 </div>

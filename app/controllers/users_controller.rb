@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :logged_in_user, only: [:new, :create]
 
   def new
     @user = User.new
@@ -19,8 +20,15 @@ class UsersController < ApplicationController
     end
   end
 
-  def user_params
-    params.require(:user).permit(:email, :password, :password_confirmation, :mobile)
-  end
+  private
 
+    def user_params
+      params.require(:user).permit(:email, :password, :password_confirmation, :mobile)
+    end
+
+    def logged_in_user
+      if logged_in?
+        redirect_to "/home"
+      end
+    end
 end

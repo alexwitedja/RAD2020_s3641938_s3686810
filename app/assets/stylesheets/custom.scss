@@ -198,9 +198,20 @@ input {
   border-radius: 10px;
 }
 
-/* */
+/* application */
 .application {
   width: 100%;
   margin-right: 0;
   margin-left: 0;
+}
+
+/* home */
+.home-cards {
+  padding: 2vh;
+  width: 100%;
+  height: 20vh;
+  background-color: white;
+  border: 2px solid lightgrey;
+  border-radius: 10px;
+  margin: 2vh 0;
 }

@@ -1,2 +1,38 @@
 <%= provide(:title, 'Home') %>
-<%= render template: 'posts/index'%>
+<div class="row">
+  <div class="col-md-8">
+    <div class="container row" style="width:auto;margin: 20px 0">
+      <div class="col-md-5"> 
+        <div class="btn-group" role="group" aria-label="Basic example">
+          <button type="button" class="btn btn-primary">Recent Posts</button>
+          <button type="button" class="btn btn-primary">Selected Posts</button>
+          <button type="button" class="btn btn-primary">My settings</button>
+        </div>
+      </div>
+      <div class="col-md-5" style="padding:0"> 
+        <form class="form-inline">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" style="margin:0">
+          <button class="btn btn-primary" type="submit">Search</button>
+        </form>
+      </div>
+      <div class="col-md-2" style="padding:0;text-align:right;" >
+        <button type="button" class="btn btn-primary">New Post</button>
+      </div>
+    </div>
+    <%= render 'posts/recent' %>
+  </div>
+  <div class="col-md-4">
+    <div>
+      <%= render 'users/recent' %>
+    </div>
+    <div>
+      Topic
+    </div>
+    <div>
+      Post
+    </div>
+    <div>
+      Link
+    </div>
+  </div>
+</div>

@@ -7,4 +7,10 @@ module UsersHelper
       gravatar_url = "https://secure.gravatar.com/avatar/#{gravatar_id}?s=#{size}"
       image_tag(gravatar_url, alt: user.email, class: "gravatar")
     end
+
+    # Returns recently active members.
+    def get_recent_members
+      # To be implemented
+      @users = User.all
+    end
   end

@@ -6,7 +6,6 @@
 $gray-medium-light: #eaeaea;
 
 /* universal */
-
 body {
   padding-top: 60px;
   background-color: $gray-medium-light;
@@ -188,11 +187,20 @@ input {
 /* posts */
 
 .posts {
-  background-color: white;
-  padding: 2vh;
-  border: lightgrey;
+  width: 100%;
+}
 
-  .row {
-    margin-top: 1vh;
-  }
+
+.post {
+  padding: 1vh;
+  background-color: white;
+  border: solid 2px lightgrey;
+  border-radius: 10px;
+}
+
+/* */
+.application {
+  width: 100%;
+  margin-right: 0;
+  margin-left: 0;
 }

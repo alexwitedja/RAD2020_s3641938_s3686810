@@ -184,3 +184,15 @@ input {
   margin-top: 15vh;
   margin-bottom: 14vh;
 }
+
+/* posts */
+
+.posts {
+  background-color: white;
+  padding: 2vh;
+  border: lightgrey;
+
+  .row {
+    margin-top: 1vh;
+  }
+}

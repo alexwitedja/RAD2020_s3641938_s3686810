@@ -19,20 +19,20 @@
         <button type="button" class="btn btn-primary">New Post</button>
       </div>
     </div>
-    <%= render 'posts/recent' %>
+    <%= render get_recent_posts %>
   </div>
   <div class="col-md-4">
     <div>
-      <%= render 'users/recent' %>
+     <%= render 'recent_users' %>
     </div>
     <div>
-      Topic
+      <%= render 'topics' %>
+    </div>
+      <%= render 'popular_posts' %>
+    <div>
     </div>
     <div>
-      Post
-    </div>
-    <div>
-      Link
+      <%= render 'link' %>
     </div>
   </div>
 </div>

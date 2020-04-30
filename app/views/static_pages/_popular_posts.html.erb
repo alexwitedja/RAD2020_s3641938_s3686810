@@ -1,0 +1,8 @@
+<div class="home-cards">
+  <p>Popular posts</p>
+  <% posts = get_popular_posts %>
+  <% posts.each do |post| %>
+    <div class="col-md-6"><%= post.title %></div>
+    <div class="col-md-6">view_count</div>
+  <% end %>
+</div>

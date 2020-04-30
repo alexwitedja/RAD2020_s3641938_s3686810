@@ -1,0 +1,9 @@
+<div class="home-cards">
+  <p>Topic</p>
+  <% topics = get_topics %>
+  <% topics.each do |topic| %>
+    <div class="col-md-2" style="margin:0 2vh;">
+      <button type="button" class="btn btn-light"><%= topic %></button>
+    </div>
+  <% end %>
+</div>

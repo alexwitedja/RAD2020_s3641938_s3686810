@@ -1,12 +1,12 @@
-<% @user = User.find_by(id: post.user_id) %>
-<div class="row post">
-  <div class="col-md-1"><%= gravatar_for(@user, size: 50) %></div>
+<% user = User.find_by(id: post.user_id) %>
+<div class="row post" style="margin:0">
+  <div class="col-md-1"><%= gravatar_for(user, size: 50) %></div>
   <div class="col-md-11">
     <div class="row"> 
       <div class="col-md-12"><%= post.title %></div>
     </div>
     <div class="row">
-      <div class="col-md-2"><%= @user.email %></div>
+      <div class="col-md-2"><%= user.email %></div>
       <div class="col-md-3"><%= post.updated_at %></div>
       <div class="col-md-2"><%= post.topic %></div>
       <div class="col-md-2">view_count</div>

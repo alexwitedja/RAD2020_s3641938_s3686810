@@ -1,7 +1,7 @@
 <div class="home-cards">
   <p>Recent Members</p>
-  <% @users = get_recent_members %>
-  <% @users.each do |user| %>
+  <% users = get_recent_members %>
+  <% users.each do |user| %>
     <div class="col-md-2" style="margin:0 2vh;">
       <%= gravatar_for(user, size: 50)%>
       <p><%= user.name %></p>

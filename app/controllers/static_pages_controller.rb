@@ -11,7 +11,6 @@ class StaticPagesController < ApplicationController
   def selected
     @selected_topics = get_selected_topics.empty? ? "News" : get_selected_topics
     @posts = Post.where(topic: @selected_topics)
-    byebug
   end
 
   def select

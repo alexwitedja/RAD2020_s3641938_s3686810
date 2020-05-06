@@ -1,6 +1,6 @@
 module PostsHelper
   def get_topics
-    @topics = ["A.I", "Game", "V.R", "REST"]
+    @topics = ["A.I", "Game", "V.R", "Rest"]
   end
   
   # Get recent posts in this month

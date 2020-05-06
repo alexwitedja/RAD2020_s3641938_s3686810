@@ -4,9 +4,9 @@
     <div class="container row" style="width:auto;margin: 20px 0">
       <div class="col-md-5"> 
         <div class="btn-group" role="group" aria-label="Basic example">
-          <button type="button" class="btn btn-primary">Recent Posts</button>
-          <button type="button" class="btn btn-primary">Selected Posts</button>
-          <button type="button" class="btn btn-primary">My settings</button>
+          <%= link_to "Recent Posts", home_path, :class => "btn btn-primary" %>
+          <%= link_to "Selected Posts", home_path(:tags => []), :class => "btn btn-primary" %>
+          <%= link_to "My Settings", home_path, :class => "btn btn-primary" %>
         </div>
       </div>
       <div class="col-md-5" style="padding:0"> 
@@ -19,7 +19,7 @@
         <button type="button" class="btn btn-primary">New Post</button>
       </div>
     </div>
-    <%= render get_recent_posts %>
+    <%= render @posts %>
   </div>
   <div class="col-md-4">
     <div>

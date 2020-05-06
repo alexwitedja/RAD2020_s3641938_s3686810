@@ -5,7 +5,7 @@
       <div class="col-md-5"> 
         <div class="btn-group" role="group" aria-label="Basic example">
           <%= link_to "Recent Posts", home_path, :class => "btn btn-primary" %>
-          <%= link_to "Selected Posts", home_path(:tags => []), :class => "btn btn-primary" %>
+          <%= link_to "Selected Posts", selected_path, :class => "btn btn-primary" %>
           <%= link_to "My Settings", home_path, :class => "btn btn-primary" %>
         </div>
       </div>
@@ -19,7 +19,7 @@
         <button type="button" class="btn btn-primary">New Post</button>
       </div>
     </div>
-    <%= render @posts %>
+    <%= yield %>
   </div>
   <div class="col-md-4">
     <div>

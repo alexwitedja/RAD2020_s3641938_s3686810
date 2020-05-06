@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   delete '/logout',to: 'sessions#destroy'
   get '/home', to: 'static_pages#home'
   resources :users
+  resources :posts
 end

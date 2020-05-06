@@ -3,12 +3,13 @@
   <div class="col-md-1"><%= gravatar_for(user, size: 50) %></div>
   <div class="col-md-11">
     <div class="row"> 
-      <div class="col-md-12" id="post-title"><%= link_to post.title, "/" %></div>
+      <div class="col-md-12" id="post-title"><%= link_to post.title, current_post(post.id) %></div>
     </div>
     <div class="row">
       <div class="col-md-2"><%= user.name %></div>
       <div class="col-md-3"><%= post.updated_at %></div>
       <div class="col-md-2"><%= post.topic %></div>
+      <div class="col-md-2"><%= post.id %></div>
       <div class="col-md-2">view_count</div>
       <div class="col-md-2">comment_count</div>
     </div>

@@ -12,4 +12,8 @@ module PostsHelper
   def get_popular_posts
     Post.all
   end
+
+  def current_post(post_id)
+    @current_post = Post.find_by(id: post_id)
+  end
 end

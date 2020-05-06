@@ -1,2 +1,7 @@
-<h1>Posts#show</h1>
-<p>Find me in app/views/posts/show.html.erb</p>
+<% provide(:title, @post.title) %>
+<h1><%= @post.title %></h1>
+<h2><%= @post.topic %></h2>
+<p><%= @post.content %></p>
+<p><%= @post.created_at %></p>
+<p><%= @post.updated_at %></p>
+<h1><%= @post.user_id %></h1>

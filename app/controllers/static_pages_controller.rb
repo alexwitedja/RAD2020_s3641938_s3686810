@@ -1,7 +1,5 @@
 class StaticPagesController < ApplicationController
   include StaticPagesHelper
-  @@selected_topics = []
-
   def recent
     vars = request.query_parameters
     @posts = Post.where(:created_at => 1.month.ago..Time.now)
@@ -11,12 +9,18 @@ class StaticPagesController < ApplicationController
   end
 
   def selected
-    @posts = Post.first
+    @selected_topics = get_selected_topics.empty? ? "News" : get_selected_topics
+    @posts = Post.where(topic: @selected_topics)
+    byebug
   end
 
   def select
     @topic = params[:topic]
     # Check if in array remove, otherwise add to array.
     toggle_topic(@topic)
+    controller = request.headers["HTTP_REFERER"]
+    if controller == "http://localhost:3000/selected"
+      redirect_to '/selected'
+    end
   end
 end

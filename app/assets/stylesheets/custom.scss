@@ -219,3 +219,14 @@ input {
   border-radius: 10px;
   margin: 2vh 0;
 }
+
+/* topic */
+.topic {
+  &:hover {
+    background-color: grey;
+  }
+
+  &.selected {
+    background-color: orange;
+  }
+}

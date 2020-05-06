@@ -3,7 +3,14 @@
   <% topics = get_topics %>
   <% topics.each do |topic| %>
     <div class="col-md-2" style="margin:0 2vh;">
-      <button type="button" class="btn btn-light"><%= topic %></button>
+      <button type="button" class="btn btn-light topic" onClick="myFunction(this)"><%= topic %></button>
     </div>
   <% end %>
 </div>
+
+<script>
+  function myFunction(e) {
+    e.classList.toggle("selected")
+    console.log(e.classList)
+  }
+</script>

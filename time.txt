@@ -1,4 +1,6 @@
-28 04 2020 Reading Active Records docs 20 min
-28 04 2020 Sign up 1hr
-28 04 2020 Log in 1hr
-29 04 2020 Remember me 30 min
+28 04 2020 Reading Active Records docs 20 min, Alex
+28 04 2020 Implement Sign up 1 hr, Alex
+28 04 2020 Implement Log in 1 hr, Alex
+29 04 2020 Implement Remember me 30 min, Alex
+07 05 2020 Implement Home 1 hr, Alex
+07 05 2020 Implement Recent and Selected posts 1 hr, Alex

@@ -13,6 +13,8 @@
         </li>
         <% if logged_in? %>
           <li><%= link_to current_user.name, current_user %></li>
+        <% else %>
+          <li><%= link_to "Log in", login_path %></li>
         <% end %>
       </ul>
       <ul class="nav navbar-nav navbar-right">

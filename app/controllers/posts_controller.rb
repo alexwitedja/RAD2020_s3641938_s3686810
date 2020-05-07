@@ -7,10 +7,11 @@ class PostsController < ApplicationController
 
   def create
     @user = current_user
-    if @user.posts.create(post_params)
+    @post = @user.posts.create(post_params)
+    if @post.save
       redirect_to home_path
     else
-      redierct_to 'new'
+      render '/posts/new'
     end
   end
 

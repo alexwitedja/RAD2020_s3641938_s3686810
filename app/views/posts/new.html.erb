@@ -2,6 +2,7 @@
 <div class="white-div">
   <h1>Post</h1>
   <%= form_for(@post, url: '/posts') do |f| %>
+    <%= render partial: 'shared/error_messages', :locals => { :item => @post } %>
 
     <%= f.label :title %>
     <%= f.text_field :title, class: 'form-control' %>

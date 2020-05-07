@@ -1,4 +1,5 @@
 <% user = User.find_by(id: post.user_id) %>
+<% if !user.nil? %>
 <div class="row post" style="margin:0">
   <div class="col-md-1"><%= gravatar_for(user, size: 50) %></div>
   <div class="col-md-11">
@@ -15,3 +16,4 @@
     </div>
   </div>
 </div>
+<% end %>

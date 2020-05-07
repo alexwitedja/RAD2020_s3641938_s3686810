@@ -1,8 +1,8 @@
 class Post < ApplicationRecord
   belongs_to :user
 
-  validates :title, presence: true, length: { minimum: 6 }
-  validates :content, presence: true, length: { minimum: 6 }
+  validates :title, presence: true,
+  validates :content, presence: true,
   validates :topic, presence: true
 
 end

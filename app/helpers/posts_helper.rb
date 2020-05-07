@@ -10,7 +10,7 @@ module PostsHelper
 
   # Get 5 most viewed posts, to be implemented
   def get_popular_posts
-    Post.all
+    Post.first(5)
   end
 
   def current_post(post_id)

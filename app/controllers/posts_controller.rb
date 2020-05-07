@@ -8,6 +8,11 @@ class PostsController < ApplicationController
   def create
     @user = current_user
     @post = @user.posts.create(post_params)
+    
+    if @post.topic.empty?
+      @post.topic = "News"
+    end
+
     if @post.save
       redirect_to home_path
     else

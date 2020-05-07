@@ -232,3 +232,23 @@ input {
     background-color: orange;
   }
 }
+
+/* post form */
+.post-form {
+  width: 100%;
+  background-color: white;
+  padding: 2vh;
+
+  .post-submit {
+    width: auto;
+  }
+
+  #post_topic {
+    width: auto;
+    display: block;
+  }
+
+  .post-textarea {
+    height: 50vh;
+  }
+}

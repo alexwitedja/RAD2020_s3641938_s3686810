@@ -1,13 +1,22 @@
 <% provide(:title, @user.email) %>
-<div class="row">
-  <aside class="col-md-4">
-    <section class="user_info">
-      <h1>
-        <%= gravatar_for @user %>
-        <%= @user.email %>
-      </h1>
-      <p><%= @user.name %></p>
+<div class="container">
+  <aside class="col-md-12">
+      <div id="grav-container"><%= gravatar_for @user %></div>
+    </div>
+    <section class="user-info row">
+      <h1><%= @user.name %></h1>
+      <p><%= @user.email %></p>
       <p><%= @user.mobile %></p>
     </section>
   </aside>
+</div>
+<div class="container-fluid">
+    <div class="row">
+      <div class="col">
+      <h1>Posts</h1>
+    </div>
+    <div class="col">
+      <h1>Comments</h1>
+    </div>
+  </div>
 </div>

@@ -2,5 +2,9 @@
 28 04 2020 Implement Sign up 1 hr, Alex
 28 04 2020 Implement Log in 1 hr, Alex
 29 04 2020 Implement Remember me 30 min, Alex
+06 05 2020 Highlight post title on mouse hover 15 min, David
+06 05 2020 Implement post#show page on mouse click 2.5 hr, David
+06 05 2020 Fix header to display username and direct to user#show 15 min, David
 07 05 2020 Implement Home 1 hr, Alex
 07 05 2020 Implement Recent and Selected posts 1 hr, Alex
+08 05 2020 

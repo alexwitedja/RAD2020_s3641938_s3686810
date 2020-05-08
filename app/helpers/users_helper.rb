@@ -13,4 +13,6 @@ module UsersHelper
       # To be implemented
       @users = User.all
     end
+
+
   end

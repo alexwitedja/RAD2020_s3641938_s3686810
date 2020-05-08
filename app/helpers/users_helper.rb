@@ -13,4 +13,13 @@ module UsersHelper
       # To be implemented
       @users = User.all
     end
+    
+  def get_posts_by_user(user_id)
+    Post.where(:user_id => user_id)
+  end
+
+  def get_comments_by_user(user_id)
+    Comment.where(:user_id => user_id)
+  end
+
   end

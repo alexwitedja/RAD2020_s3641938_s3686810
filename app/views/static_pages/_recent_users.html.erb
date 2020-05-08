@@ -3,7 +3,7 @@
   <% users = get_recent_members %>
   <% users.each do |user| %>
     <div class="col-md-2" style="margin:0 2vh;">
-      <%= gravatar_for(user, size: 50)%>
+      <%= link_to gravatar_for(user, size: 50), get_user(user.id)%>
       <p><%= user.name %></p>
     </div>
   <% end %>

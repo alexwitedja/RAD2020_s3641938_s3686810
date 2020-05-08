@@ -1,0 +1,11 @@
+<% comments = get_comments_by_user(@user.id) %>
+<% comments.each do |comment| %>
+    <div class="row">
+        <div class="col-lg-6 col-md-6">
+            <p><%= comment.content%></p>
+        </div>
+        <div class="col-lg-6 col-md-6">
+            <p><%= comment.created_at%></p>
+        </div>
+    </div>
+<% end %>

@@ -12,4 +12,9 @@ module StaticPagesHelper
   def get_selected_topics
     @@selected_topics
   end
+
+  # Returns member with the id passed in as parameter
+  def get_user(user_id)
+    @user = User.find_by(id: user_id)
+  end
 end

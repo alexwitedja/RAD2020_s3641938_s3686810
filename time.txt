@@ -8,3 +8,4 @@
 07 05 2020 Implement Home 1 hr, Alex
 07 05 2020 Implement Recent and Selected posts 1 hr, Alex
 08 05 2020 Show posts and comments by user on their profile 2 Hr, David
+09 05 2020 Implement making comments and worked on posts css, 3 hr, Alex

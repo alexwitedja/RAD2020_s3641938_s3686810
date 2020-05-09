@@ -31,7 +31,6 @@ class UsersController < ApplicationController
 
     def logged_in_user
       if logged_in?
-        flash[:danger] = "You are already logged in"
         redirect_to "/home"
       end
     end

@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   get '/home', to: 'static_pages#recent'
   get '/selected', to: 'static_pages#selected'
   post '/select', to: 'static_pages#select'
-  resources :users
-  resources :posts
+  resources :users, except: [:destroy, :index]
+  resources :posts, except: [:edit, :index, :update, :destroy] do
+    resources :comments, only: [:new, :create]
+  end
+  resources :comments, only: :destroy
 end

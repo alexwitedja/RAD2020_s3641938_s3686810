@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'settings/setting'
   root 'users#new'
   get '/signup',   to: 'users#new'
   post '/signup',  to: 'users#create'
@@ -8,6 +9,7 @@ Rails.application.routes.draw do
   get '/home', to: 'static_pages#recent'
   get '/selected', to: 'static_pages#selected'
   post '/select', to: 'static_pages#select'
+  get '/settings', to: 'settings#show'
   resources :users, except: [:destroy, :index]
   resources :posts, except: [:edit, :index, :update, :destroy] do
     resources :comments, only: [:new, :create]

@@ -9,3 +9,5 @@
 07 05 2020 Implement Recent and Selected posts 1 hr, Alex
 08 05 2020 Show posts and comments by user on their profile 2 Hr, David
 09 05 2020 Implement making comments and worked on posts css, 3 hr, Alex
+10 05 2020 Create settings route and layout 0.5 hr, David
+14 05 2020 Implement my profile on settings home page, 2 hr, David

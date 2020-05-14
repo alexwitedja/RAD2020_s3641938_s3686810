@@ -1,18 +1,15 @@
-<h1>Settings#show</h1>
-<p>Find me in app/views/settings/show.html.erb</p>
-
 <div class="container-fluid">
     <div class="row">
-        <div class="col-lg-2 col-md-3 col-sm-12">
+        <div id="settings-menu" class="bg-dark text-white col-lg-2 col-md-3 col-sm-4">
             <ul>
-                <li>My Profile</li>
+                <li><%=link_to "My Profile", settings_profile_path %></li>
                 <li>My Post</li>
                 <li>My Comments</li>
                 <li>Comments to Me</li>
                 <li>Settings</li>
             </ul>
         </div>
-        <div class="col-lg-10 col-md-9 col-sm-12">
+        <div id="settings-show" class="col-lg-10 col-md-9 col-sm-8">
             <%= yield %>
         </div>
     </div>

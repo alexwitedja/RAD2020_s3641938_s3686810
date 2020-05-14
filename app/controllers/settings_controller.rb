@@ -1,4 +1,8 @@
 class SettingsController < ApplicationController
-  def setting
+  def profile
+    @user = current_user
+  end
+
+  def show
   end
 end

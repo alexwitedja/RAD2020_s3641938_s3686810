@@ -13,5 +13,9 @@ class SettingsController < ApplicationController
     @comments = get_comments_by_user(current_user.id)
   end
 
+  def receivedcomments
+    @receivedcomments = get_comments_to_user(current_user.id)
+  end
+
 
 end

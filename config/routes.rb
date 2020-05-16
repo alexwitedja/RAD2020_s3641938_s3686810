@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get '/settings/profile', to: 'settings#profile'
   get '/settings/posts', to: 'settings#posts'
   get '/settings/comments', to: 'settings#comments'
+  get '/settings/receivedcomments', to: 'settings#receivedcomments'
   resources :users, except: [:destroy, :index]
   resources :posts, except: [:edit, :index, :update, :destroy] do
     resources :comments, only: [:new, :create]

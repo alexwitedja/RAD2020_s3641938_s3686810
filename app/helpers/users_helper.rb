@@ -22,4 +22,8 @@ module UsersHelper
     Comment.where(:user_id => user_id)
   end
 
+  def get_comments_to_user(user_id)
+    Comment.where(:post_id => get_posts_by_user(user_id))
+  end
+
 end

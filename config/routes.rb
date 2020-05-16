@@ -9,8 +9,10 @@ Rails.application.routes.draw do
   get '/home', to: 'static_pages#recent'
   get '/selected', to: 'static_pages#selected'
   post '/select', to: 'static_pages#select'
-  # get '/settings/profile', to: 'settings#profile'
   get '/settings/profile', to: 'settings#profile'
+  get '/settings/posts', to: 'settings#posts'
+  get '/settings/comments', to: 'settings#comments'
+  get '/settings/receivedcomments', to: 'settings#receivedcomments'
   resources :users, except: [:destroy, :index]
   resources :posts, except: [:edit, :index, :update, :destroy] do
     resources :comments, only: [:new, :create]

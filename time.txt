@@ -11,3 +11,5 @@
 09 05 2020 Implement making comments and worked on posts css, 3 hr, Alex
 10 05 2020 Create settings route and layout 0.5 hr, David
 14 05 2020 Implement my profile on settings home page, 2 hr, David
+16 05 2020 Implement my posts, my comments and comments to me on settings page, 1 hr, David
+16 05 2020 Update profile page styling, 20 min, David

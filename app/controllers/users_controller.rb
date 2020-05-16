@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  include UsersHelper
   before_action :logged_in_user, only: [:new, :create]
 
   def new
@@ -9,7 +10,9 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = current_user
+    @posts = get_posts_by_user(@user.id)
+    @comments = get_comments_by_user(@user.id)
   end
 
   def create

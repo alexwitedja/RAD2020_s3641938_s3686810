@@ -10,11 +10,11 @@
     </section>
        <div class="col-lg-6 col-md-6 col-sm-12">
         <h2>My Posts</h2>
-        <div><%= render '/users/users_posts' %></div>
+        <div><%= render @posts %></div>
       </div>
       <div class="col-lg-6 col-md-6 col-sm-12">
         <h2>My Comments</h2>
-        <div><%= render 'users/users_comments' %></div>
+        <div><%= render @comments %></div>
       </div>
   </aside>
 </div>

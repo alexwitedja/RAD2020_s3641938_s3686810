@@ -3,6 +3,8 @@ class SettingsController < ApplicationController
 
   def profile
     @user = current_user
+    @posts = get_posts_by_user(current_user.id)
+    @comments = get_comments_by_user(current_user.id)
   end
 
   def posts

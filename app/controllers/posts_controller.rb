@@ -25,6 +25,9 @@ class PostsController < ApplicationController
     @user = @post.user
     @comments = @post.comments
     @new_comment = Post.new
+    if @post.present?
+      @post.increment!(:view_count)
+    end
   end
 
   def index

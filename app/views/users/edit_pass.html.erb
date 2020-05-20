@@ -1,0 +1,19 @@
+<% provide(:title, "Edit User Password") %>
+<% provide(:selected, "pass") %>
+<%= render 'settings' do %>
+  <div class="row" style="background-color: white;padding: 5vh">
+    <div>
+      <%= form_for(@user, url: update_pass_path(@user)) do |f| %>
+        <%= render partial: 'shared/error_messages', :locals => { :item => @user } %>
+        
+        <%= f.label :password %>
+        <%= f.password_field :password, class: 'form-control' %>
+
+        <%= f.label :password_confirmation, "Confirmation" %>
+        <%= f.password_field :password_confirmation, class: 'form-control' %>
+
+        <%= f.submit "Confirm", class: "btn btn-primary"%>
+      <% end %>
+    </div>
+  </div>
+<% end %>

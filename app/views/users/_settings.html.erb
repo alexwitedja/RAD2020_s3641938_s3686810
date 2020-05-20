@@ -1,0 +1,17 @@
+<%= render 'settings/show' do %>
+  <div class="btn-group" role="group" aria-label="Basic example">
+    <% # conditional css %>
+    <% info_selected = (yield(:selected) == "info") ? 'selected' : '' %>
+    <% avatar_selected = (yield(:selected) == "avatar") ? 'selected' : '' %>
+    <% pass_selected = (yield(:selected) == "pass") ? 'selected' : '' %>
+    <% card_selected = (yield(:selected) == "card") ? 'selected' : '' %>
+    
+    <%= link_to "Personal info", edit_user_path(current_user), :class => "btn btn-primary #{info_selected}" %>
+    <%= link_to "Avatar", edit_avatar_path(current_user), :class => "btn btn-primary #{avatar_selected}" %>
+    <%= link_to "Password", edit_pass_path(current_user), :class => "btn btn-primary #{pass_selected}" %>
+    <%= link_to "Verification", edit_card_path(current_user), :class => "btn btn-primary #{card_selected}" %>
+  </div>
+  <div>
+    <%= yield %>
+  </div>
+<% end %>

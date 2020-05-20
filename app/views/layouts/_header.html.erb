@@ -19,7 +19,7 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <% if logged_in? %>
-          <li><%= link_to gravatar_for(current_user, size:20), logout_path, method: :delete %></li>
+          <li><%= link_to user_avatar(current_user, size:20), logout_path, method: :delete %></li>
         <% end %>
       </ul>
     </nav>

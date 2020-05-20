@@ -5,7 +5,7 @@
     <%= render partial: 'shared/error_messages', :locals => { :item => @post } %>
 
     <%= f.label :title %>
-    <%= f.text_field :title %>
+    <%= f.text_field :title, class: 'form-control' %>
 
     <%= f.label :topic %>
     <%= f.collection_select :topic, get_topics, :to_s, :to_s, include_blank: true, class: 'form-control' %>

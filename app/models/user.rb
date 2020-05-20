@@ -1,6 +1,8 @@
 class User < ApplicationRecord
   has_many :posts
   has_many :comments
+  has_one_attached :avatar
+  has_one_attached :card
   attr_accessor :remember_token
 
   before_save { self.email = email.downcase }
@@ -10,7 +12,9 @@ class User < ApplicationRecord
                   format: { with: VALID_EMAIL_REGEX },
                   uniqueness: { case_sensitive: false }
   has_secure_password
-  validates :password, presence: true, length: { minimum: 6 }
+  validates :password, presence: true, length: { minimum: 6 }, on: [:create, :update_password]
+  VALID_STUDENT_NUMBER_REGEX = /\As\d{7}\z/
+  validates :student_number, format: { with: VALID_STUDENT_NUMBER_REGEX }, allow_nil: true
 
   class << self
     # Returns the hash digest of the given string.

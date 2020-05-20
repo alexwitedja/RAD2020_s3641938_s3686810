@@ -4,9 +4,13 @@
     <div class="container row" style="width:auto;margin: 20px 0">
       <div class="col-md-5"> 
         <div class="btn-group" role="group" aria-label="Basic example">
-          <%= link_to "Recent Posts", home_path, :class => "btn btn-primary" %>
-          <%= link_to "Selected Posts", selected_path, :class => "btn btn-primary" %>
-          <%= link_to "My Settings", settings_profile_path, :class => "btn btn-primary" %>
+          <% selected_selected = (yield(:selected) == "selected") ? 'selected' : '' %>
+          <% recent_selected = (yield(:selected) == "recent") ? 'selected' : '' %>
+          <%= link_to "Recent Posts", home_path, :class => "btn btn-primary #{recent_selected}" %>
+          <%= link_to "Selected Posts", selected_path, :class => "btn btn-primary #{selected_selected}" %>
+          <% if logged_in? %>
+            <%= link_to "My Settings", settings_profile_path, :class => "btn btn-primary" %>
+          <% end %>
         </div>
       </div>
       <div class="col-md-5" style="padding:0"> 

@@ -1,6 +1,6 @@
 <div class="row" style="margin-bottom:2vh; border: 1px solid lightgrey; padding: 1vh;">
   <div class="col-md-12 col-lg-12" style="margin-bottom:2vh;">
-    <%= gravatar_for(comment.user, size: 50) %>
+    <%= user_avatar(comment.user, size: 50) %>
     <%= comment.user.name %>
     <%= comment.created_at %>
   </div>

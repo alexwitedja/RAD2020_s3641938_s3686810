@@ -46,14 +46,14 @@ post4 = user4.posts.create!(title: "example post 4",
             content: "hahahaha",
             topic: "Rest")
 
-post4.comments.create(content: "Hi I am baboon",
+post4.comments.create!(content: "Hi I am baboon",
                         user_id: user3.id)
 
-post3.comments.create(content: "Hi I am tiger",
+post3.comments.create!(content: "Hi I am tiger",
                         user_id: user4.id)
 
-post2.comments.create(content: "Hi I am alex",
+post2.comments.create!(content: "Hi I am alex",
                         user_id: user1.id)
 
-post1.comments.create(content: "Hi I am david",
+post1.comments.create!(content: "Hi I am david",
                         user_id: user2.id)

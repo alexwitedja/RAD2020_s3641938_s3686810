@@ -1,0 +1,25 @@
+<% provide(:title, "Edit User Card") %>
+<% provide(:selected, "card") %>
+<%= render 'settings' do %>
+  <div class="row" style="background-color: white;padding: 5vh">
+    <div>
+      <%= form_for(@user, url: update_card_path(@user)) do |f| %>
+        <%= render partial: 'shared/error_messages', :locals => { :item => @user } %>
+        
+        <%= f.label :full_name %>
+        <%= f.text_field :full_name, class: 'form-control' %>
+
+        <%= f.label :student_number %>
+        <%= f.text_field :student_number, class: 'form-control' %>
+
+        <%= f.file_field :card %>
+
+        <% if @user.card.attached? %>
+          <%= image_tag @user.card %>
+        <% end %>
+
+        <%= f.submit "Confirm", class: "btn btn-primary edit-submit"%>
+      <% end %>
+    </div>
+  </div>
+<% end %>

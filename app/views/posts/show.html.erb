@@ -16,7 +16,7 @@
   </div>
   <div class="row" style="background-color: lightgrey;padding: 2vh;margin: 2vh 0;">
     <div id="grav-container" style="margin:0;">
-      <%= gravatar_for(@user, size: 50) %>
+      <%= user_avatar(@user, size: 50) %>
     </div>
     <%= @post.created_at %>
   </div>
@@ -28,7 +28,7 @@
   <div class="row">
     <h3 style="text-align: left;">Comments</h3>
     <div>
-    <%= form_for(@new_comment, url:post_comments_url(1)) do |f| %>
+    <%= form_for(@new_comment, url:post_comments_url(@post.id)) do |f| %>
       <%= f.label :content %>
       <%= f.text_area :content, required: true, class: 'form-control post-textarea' %>
 

@@ -1,11 +1,15 @@
 module UsersHelper
 
-  # Returns the Gravatar for the given user.
-  def gravatar_for(user, options = { size: 80 })
-    gravatar_id = Digest::MD5::hexdigest(user.email.downcase)
+  # Returns the avatar for the given user, Gravatar if none attached.
+  def user_avatar(user, options = { size: 80 })
     size = options[:size]
-    gravatar_url = "https://secure.gravatar.com/avatar/#{gravatar_id}?s=#{size}"
-    image_tag(gravatar_url, alt: user.email, class: "gravatar")
+    if user.avatar.attached?
+      image_tag(user.avatar, height: size, width: size)
+    else
+      gravatar_id = Digest::MD5::hexdigest(user.email.downcase)
+      gravatar_url = "https://secure.gravatar.com/avatar/#{gravatar_id}?s=#{size}"
+      image_tag(gravatar_url, alt: user.email, class: "gravatar")
+    end
   end
 
   # Returns recently active members.

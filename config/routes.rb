@@ -27,4 +27,5 @@ Rails.application.routes.draw do
     resources :comments, only: [:new, :create]
   end
   resources :comments, only: :destroy
+  resources :password_resets, only: [:new, :create, :edit, :update]
 end

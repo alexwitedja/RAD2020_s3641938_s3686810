@@ -46,7 +46,8 @@ class UsersController < ApplicationController
 
   def update_pass
     @user = User.find(params[:id])
-    @user.password = edit_pass_params
+    @user.password = params[:user][:password]
+    @user.password_confirmation = params[:user][:password_confirmation]
     @user.valid?(:update_password)
     if @user.errors.any?
       render 'edit_pass'

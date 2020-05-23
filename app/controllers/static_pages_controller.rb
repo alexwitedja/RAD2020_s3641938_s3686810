@@ -16,6 +16,35 @@ class StaticPagesController < ApplicationController
     controller = request.headers["HTTP_REFERER"]
     if controller == "http://localhost:3000/selected"
       redirect_to '/selected'
+    else
+      redirect_to request.referrer
     end
   end
+
+  def home_search
+    if params[:search].blank?
+      redirect_to(root_path, alert: "Empty field!") and return
+    else
+      @parameter = params[:search].downcase
+      @results = Post.where("lower(title) LIKE :search", search: '%'+@parameter+'%')
+    end
+  end
+
+  def selected_search
+    if params[:search].blank?
+      redirect_to(root_path, alert: "Empty field!") and return
+    else
+      @parameter = params[:search].downcase
+
+      @selected_topics = get_selected_topics.empty? ? "News" : get_selected_topics
+      @posts = Post.where(topic: @selected_topics)
+      @selected_posts = @posts.where("lower(title) LIKE :search", search: '%'+@parameter+'%')
+
+    end
+
+
+
+  end
+
+
 end

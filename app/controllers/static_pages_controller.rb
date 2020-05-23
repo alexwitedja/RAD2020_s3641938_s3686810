@@ -16,6 +16,8 @@ class StaticPagesController < ApplicationController
     controller = request.headers["HTTP_REFERER"]
     if controller == "http://localhost:3000/selected"
       redirect_to '/selected'
+    else
+      redirect_to request.referrer
     end
   end
 

@@ -14,3 +14,5 @@
 16 05 2020 Implement my posts, my comments and comments to me on settings page, 1 hr, David
 16 05 2020 Update profile page styling, 20 min, David
 20 05 2020 Implemented settings(edit user, add avatar, edit password, add card) functionality, 6 hr, Alex
+21 05 2020 Partially implemented search posts functionality, 2 hr, David
+23 05 2020 Search posts fully implemeneted, 1 hr, David

@@ -67,6 +67,16 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test "authenticated? should return false for a user with nil digest" do
-    assert_not @user.authenticated?('')
+    assert_not @user.authenticated?(:remember, '')
+  end
+
+  test "student number have the correct format" do
+    @user.student_number = "s3641938"
+    assert @user.valid?
+  end
+
+  test "student number should have correct format" do
+    @user.student_number = "s10ads89"
+    assert_not @user.valid?
   end
 end

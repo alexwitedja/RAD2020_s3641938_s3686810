@@ -2,8 +2,16 @@
   <p>Topic</p>
   <% topics = get_topics %>
   <% topics.each do |topic| %>
-    <div class="col-md-2" style="margin:0 2vh;">
-      <button type="button" class="btn btn-light"><%= topic %></button>
+    <div class="col-md-2" style="margin:0 2vh; padding:0;">
+      <% # conditional css %>
+      <% css_class = (get_selected_topics.include?(topic)) ? 'selected' : '' %>
+      <%= button_to "#{topic}", { action: "select", topic: "#{topic}" }, class: "btn btn-light topic #{css_class}", onClick: "toggleButton(this)" %>      
     </div>
   <% end %>
 </div>
+
+<script>
+  function toggleButton(e) {
+    e.classList.toggle("selected")
+  }
+</script>

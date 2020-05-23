@@ -1,0 +1,13 @@
+<div class="row" style="margin-bottom:2vh; border: 1px solid lightgrey; padding: 1vh;">
+  <div class="col-md-12 col-lg-12" style="margin-bottom:2vh;">
+    <%= user_avatar(comment.user, size: 50) %>
+    <%= comment.user.name %>
+    <%= comment.created_at %>
+  </div>
+  <div class="col-md-11 col-lg-11">
+    <%= comment.content %>
+  </div>
+  <div class="col-md-1 col-lg-1"> 
+    Reply
+  </div>
+</div>

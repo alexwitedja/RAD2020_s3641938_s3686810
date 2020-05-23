@@ -86,6 +86,10 @@ footer {
   box-sizing:         border-box;
 }
 
+.navbar-center {
+  text-align: center;
+}
+
 /* miscellaneous */
 
 .debug_dump {
@@ -209,9 +213,61 @@ input {
 .home-cards {
   padding: 2vh;
   width: 100%;
-  height: 20vh;
+  min-height: 20vh;
   background-color: white;
   border: 2px solid lightgrey;
   border-radius: 10px;
   margin: 2vh 0;
+  overflow: auto;
+  display: block;
+}
+
+/* topic */
+.topic {
+  &:hover {
+    background-color: grey;
+  }
+
+  &.selected {
+    background-color: orange;
+  }
+}
+
+/* post form */
+.post-form {
+  width: 100%;
+  background-color: white;
+  padding: 2vh;
+
+  .post-submit {
+    width: auto;
+  }
+
+  #post_topic {
+    width: auto;
+    display: block;
+  }
+
+  .post-textarea {
+    height: 50vh;
+  }
+}
+
+/* show post */
+.row {
+  margin: 0;
+}
+
+/* comment form */
+.comment-submit {
+  width: 10%;
+}
+
+/* edit */
+.edit-submit {
+  margin-top: 20px;
+}
+
+.selected {
+  background-color: orange;
 }

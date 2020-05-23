@@ -1,2 +1,20 @@
-<h1>Posts#new</h1>
-<p>Find me in app/views/posts/new.html.erb</p>
+<% provide(:title, 'New post') %>
+<div class="post-form">
+  <h1>Post</h1>
+  <%= form_for(@post, url: '/posts', class: 'post-form') do |f| %>
+    <%= render partial: 'shared/error_messages', :locals => { :item => @post } %>
+
+    <%= f.label :title %>
+    <%= f.text_field :title, class: 'form-control' %>
+
+    <%= f.label :topic %>
+    <%= f.collection_select :topic, get_topics, :to_s, :to_s, include_blank: true, class: 'form-control' %>
+
+    <%= f.label :content %>
+    <%= f.text_area :content, class: 'form-control post-textarea' %>
+
+    <%= f.submit "Post", class: "btn btn-primary post-submit" %>
+
+    <%= link_to "Cancel", home_path, class: "btn btn-light" %>
+  <% end %>
+</div>

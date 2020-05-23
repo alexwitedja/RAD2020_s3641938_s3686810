@@ -1,0 +1,15 @@
+<% provide(:title, "Edit User Avatar") %>
+<% provide(:selected, "avatar") %>
+<%= render 'settings' do %>
+  <div class="row" style="background-color: white;padding: 5vh">
+    <div>
+      <%= form_for(@user, url: update_avatar_path(@user)) do |f| %>
+        <%= f.file_field :avatar %>
+
+        <%= user_avatar @user %>
+
+        <%= f.submit "Confirm", class: "btn btn-primary edit-submit" %>
+      <% end %>
+    </div>
+  </div>
+<% end %>

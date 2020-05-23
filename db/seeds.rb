@@ -12,7 +12,7 @@ user1 = User.create!(email: "alex@halo.com",
                     password_confirmation: "password",
                     name: "alex")
 
-user1.posts.create!(title: "example post 1",
+post1 = user1.posts.create!(title: "example post 1",
                   content: "hahahaha",
                   topic: "A.I")
 
@@ -22,7 +22,7 @@ user2 = User.create!(email: "david@halo.com",
                   password_confirmation: "password",
                   name: "david")
 
-user2.posts.create!(title: "example post 3",
+post2 = user2.posts.create!(title: "example post 2",
                 content: "hahahaha",
                 topic: "V.R")
 
@@ -32,7 +32,7 @@ user3 = User.create!(email: "baboon@halo.com",
                 password_confirmation: "password",
                 name: "baboon")
 
-user3.posts.create!(title: "example post 3",
+post3 = user3.posts.create!(title: "example post 3",
               content: "hahahaha",
               topic: "Game")
             
@@ -42,6 +42,18 @@ user4 = User.create!(email: "tiger@halo.com",
               password_confirmation: "password",
               name: "tiger")
 
-user4.posts.create!(title: "example post 3",
+post4 = user4.posts.create!(title: "example post 4",
             content: "hahahaha",
             topic: "Rest")
+
+post4.comments.create!(content: "Hi I am baboon",
+                        user_id: user3.id)
+
+post3.comments.create!(content: "Hi I am tiger",
+                        user_id: user4.id)
+
+post2.comments.create!(content: "Hi I am alex",
+                        user_id: user1.id)
+
+post1.comments.create!(content: "Hi I am david",
+                        user_id: user2.id)

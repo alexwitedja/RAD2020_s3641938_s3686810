@@ -1,4 +1,18 @@
-28 04 2020 Reading Active Records docs 20 min
-28 04 2020 Sign up 1hr
-28 04 2020 Log in 1hr
-29 04 2020 Remember me 30 min
+28 04 2020 Reading Active Records docs 20 min, Alex
+28 04 2020 Implement Sign up 1 hr, Alex
+28 04 2020 Implement Log in 1 hr, Alex
+29 04 2020 Implement Remember me 30 min, Alex
+06 05 2020 Highlight post title on mouse hover 15 min, David
+06 05 2020 Implement post#show page on mouse click 2.5 hr, David
+06 05 2020 Fix header to display username and direct to user#show 15 min, David
+07 05 2020 Implement Home 1 hr, Alex
+07 05 2020 Implement Recent and Selected posts 1 hr, Alex
+08 05 2020 Show posts and comments by user on their profile 2 Hr, David
+09 05 2020 Implement making comments and worked on posts css, 3 hr, Alex
+10 05 2020 Create settings route and layout 0.5 hr, David
+14 05 2020 Implement my profile on settings home page, 2 hr, David
+16 05 2020 Implement my posts, my comments and comments to me on settings page, 1 hr, David
+16 05 2020 Update profile page styling, 20 min, David
+20 05 2020 Implemented settings(edit user, add avatar, edit password, add card) functionality, 6 hr, Alex
+21 05 2020 Partially implemented search posts functionality, 2 hr, David
+23 05 2020 Search posts fully implemeneted, 1 hr, David

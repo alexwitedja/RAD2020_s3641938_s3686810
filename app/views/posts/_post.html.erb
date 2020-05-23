@@ -1,16 +1,18 @@
 <% user = User.find_by(id: post.user_id) %>
+<% if !user.nil? %>
 <div class="row post" style="margin:0">
-  <div class="col-md-1"><%= gravatar_for(user, size: 50) %></div>
+  <div class="col-md-1"><%= link_to user_avatar(post.user, size: 50), get_user(post.user.id) %></div>
   <div class="col-md-11">
     <div class="row"> 
-      <div class="col-md-12"><%= post.title %></div>
+      <div class="col-md-12" id="post-title"><%= link_to post.title, current_post(post.id) %></div>
     </div>
     <div class="row">
-      <div class="col-md-2"><%= user.name %></div>
-      <div class="col-md-3"><%= post.updated_at %></div>
+      <div class="col-md-2"><%= link_to post.user.name, get_user(post.user.id) %></div>
+      <div class="col-md-3"><%= post.created_at %></div>
       <div class="col-md-2"><%= post.topic %></div>
-      <div class="col-md-2">view_count</div>
-      <div class="col-md-2">comment_count</div>
+      <div class="col-md-2">View count: <%= post.view_count %></div>
+      <div class="col-md-2"><%= post.comments.count %></div>
     </div>
   </div>
 </div>
+<% end %>

@@ -1,0 +1,28 @@
+<% provide(:title, "Edit User") %>
+<% provide(:selected, "info") %>
+<%= render 'settings' do %>
+  <div class="row" style="background-color: white;padding: 5vh">
+    <div>
+      <%= form_for(@user) do |f| %>
+        <%= render partial: 'shared/error_messages', :locals => { :item => @user } %>
+        
+        <%= f.label :name %>
+        <%= f.text_field :name, class: 'form-control' %>
+
+        <%= f.label :email %>
+        <%= f.text_field :email, class: 'form-control' %>
+
+        <%= f.label :mobile %>
+        <%= f.text_field :mobile, class: 'form-control' %>
+
+        <%= f.label :city %>
+        <%= f.text_field :city, class: 'form-control' %>
+
+        <%= f.label :info %>
+        <%= f.text_area :info, class: 'form-control' %>
+
+        <%= f.submit "Save changes", class: "btn btn-primary"%>
+      <% end %>
+    </div>
+  </div>
+<% end %>

@@ -1,8 +1,9 @@
 <% provide(:title, 'Sign up') %>
+<% provide(:disable, 'nav') %>
 <div class="white-div">
   <h1>Sign up</h1>
   <%= form_for(@user, url: signup_path) do |f| %>
-    <%= render 'shared/error_messages' %>
+    <%= render partial: 'shared/error_messages', :locals => { :item => @user } %>
 
     <%= f.label :email %>
     <%= f.email_field :email, class: 'form-control' %>

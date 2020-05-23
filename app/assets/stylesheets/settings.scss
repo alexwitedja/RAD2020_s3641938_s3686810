@@ -1,0 +1,32 @@
+// Place all the styles related to the Settings controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+#settings-menu {
+    padding-top: 2em;
+    background-color: #343a40;
+    color: white;
+    height: 60em;
+}
+
+#settings-menu ul {
+    list-style: none;
+}
+
+#settings-menu ul li {
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+#settings-menu ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+#settings-menu ul li a:hover {
+    color: #007bff;
+}
+
+#settings-show {
+    background-color: #f8f9fa;
+    height: 60em;
+}

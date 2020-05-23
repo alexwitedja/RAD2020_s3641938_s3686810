@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-  before_action :logged_in_user, only: [:new, :create]
+  before_action :logged_in_user, only: [:new]
 
   def new
   end
@@ -25,6 +25,7 @@ class SessionsController < ApplicationController
 
     def logged_in_user
       if logged_in?
+        flash[:danger] = "You are already logged in"
         redirect_to "/home"
       end
     end

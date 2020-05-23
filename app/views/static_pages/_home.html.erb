@@ -14,15 +14,26 @@
         </div>
       </div>
 
-
-      <form action="/search" method="get" class="col-md-5 col-xs-12">
-      <div class="input-group">  
-        <%= search_field_tag :search, params[:search], placeholder: "Search", class: "form-control" %>  
-        <div class="input-group-btn">  
-          <%= button_tag "", :class => 'btn btn-info glyphicon glyphicon-search',:name => nil%>  
+      <% if yield(:selected) == "recent" %>
+        <form action="/home/search/" method="get" class="col-md-5 col-xs-12">
+        <div class="input-group">  
+          <%= search_field_tag :search, params[:search], placeholder: "Search", class: "form-control" %>  
+          <div class="input-group-btn">  
+            <%= button_tag "", :class => 'btn btn-info glyphicon glyphicon-search',:name => nil%>  
+          </div>  
         </div>  
-      </div>  
-
+        </form>
+      <% elsif yield(:selected) == "selected" %>
+        <form action="/selected/search" method="get" class="col-md-5 col-xs-12">
+        <div class="input-group">  
+          <%= search_field_tag :search, params[:search], placeholder: "Dearch", class: "form-control" %>  
+          <div class="input-group-btn">  
+            <%= button_tag "", :class => 'btn btn-info glyphicon glyphicon-search',:name => nil%>  
+          </div>  
+        </div>  
+        </form>
+      <% end %>
+ 
 
       <div class="col-md-2" style="padding:0;text-align:right;" >
         <%= link_to "New Post", "/posts/new", :class => "btn btn-primary" %>

@@ -6,4 +6,9 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  test "should get selected post path" do
+    get selected_path
+    assert_response :success
+  end
+
 end

@@ -21,30 +21,13 @@ class StaticPagesController < ApplicationController
     end
   end
 
-  def home_search
-    if params[:search].blank?
-      redirect_to(root_path, alert: "Empty field!") and return
-    else
-      @parameter = params[:search].downcase
-      @results = Post.where("lower(title) LIKE :search", search: '%'+@parameter+'%')
-    end
-  end
-
-  def selected_search
+  def search
     if params[:search].blank?
       redirect_to(root_path, alert: "Empty field!") and return
     else
       @parameter = params[:search].downcase
 
-      @selected_topics = get_selected_topics.empty? ? "News" : get_selected_topics
-      @posts = Post.where(topic: @selected_topics)
-      @selected_posts = @posts.where("lower(title) LIKE :search", search: '%'+@parameter+'%')
-
+      @posts = Post.where("lower(title) LIKE :search OR lower(content) LIKE :search OR lower(topic) LIKE :search", search: '%'+@parameter+'%')
     end
-
-
-
   end
-
-
 end

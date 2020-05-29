@@ -18,7 +18,8 @@
     <div id="grav-container" style="margin:0;">
       <%= user_avatar(@user, size: 50) %>
     </div>
-    <%= @post.created_at %>
+    <p>Created at: <%= @post.created_at %></p>
+    <p>By: <%= @user.name %></p>
   </div>
   <div class="row">
     <div class="col-lg-12 col-md-6">

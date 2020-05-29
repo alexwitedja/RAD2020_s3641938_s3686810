@@ -26,8 +26,12 @@ class StaticPagesController < ApplicationController
       redirect_to(root_path, alert: "Empty field!") and return
     else
       @parameter = params[:search].downcase
-
-      @posts = Post.where("lower(title) LIKE :search OR lower(content) LIKE :search OR lower(topic) LIKE :search", search: '%'+@parameter+'%')
+      user = User.find_by(name: @parameter)
+      if !user.nil?
+        @posts = user.posts
+      else
+        @posts = Post.where("lower(title) LIKE :search OR lower(content) LIKE :search OR lower(topic) LIKE :search", search: '%'+@parameter+'%')
+      end
     end
   end
 end

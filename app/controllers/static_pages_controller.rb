@@ -14,16 +14,16 @@ class StaticPagesController < ApplicationController
     # Check if in array remove, otherwise add to array.
     toggle_topic(@topic)
     controller = request.headers["HTTP_REFERER"]
-    if controller == "http://localhost:3000/selected"
-      redirect_to '/selected'
-    else
+    if !controller.nil?
       redirect_to request.referrer
+    else
+      redirect_to '/selected'
     end
   end
 
   def home_search
     if params[:search].blank?
-      redirect_to(root_path, alert: "Empty field!") and return
+      redirect_to(home_path, alert: "Empty field!") and return
     else
       @parameter = params[:search].downcase
       @results = Post.where("lower(title) LIKE :search", search: '%'+@parameter+'%')
@@ -32,7 +32,7 @@ class StaticPagesController < ApplicationController
 
   def selected_search
     if params[:search].blank?
-      redirect_to(root_path, alert: "Empty field!") and return
+      redirect_to(home_path, alert: "Empty field!") and return
     else
       @parameter = params[:search].downcase
 
@@ -41,10 +41,5 @@ class StaticPagesController < ApplicationController
       @selected_posts = @posts.where("lower(title) LIKE :search", search: '%'+@parameter+'%')
 
     end
-
-
-
   end
-
-
 end

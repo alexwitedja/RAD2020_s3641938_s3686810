@@ -13,10 +13,10 @@ class SiteLayoutTest < ActionDispatch::IntegrationTest
 
   test "See recent post doesn't show posts that are over 1 month old" do
     get home_path
-    posts = css_select(".post")
-    # @post3 is created_at two months ago therefore only 2 are rendered
+    # @post3 is created_at two months ago therefore only 3 are rendered
     assert_select "div.post", /#{@post1.title}/
     assert_select "div.post", /#{@post2.title}/
+    assert_select "div.post", /#{@post4.title}/
     assert_select "div.post", /^((?!#{@post3.topic}).)*$/
   end
 
@@ -49,5 +49,21 @@ class SiteLayoutTest < ActionDispatch::IntegrationTest
   end
 
   test "Search functionality shows correct posts" do
+    get search_path, params: { search: "Game" }
+    # shows all posts containing game keyword (there are 2 in the fixtures)
+    assert_select 'div.post', { :text => /Game/, :count => 2 }
+    assert_select 'div.post', { :text => /A.I/, :count => 0}
+    get search_path, params: { search: "Example" }
+    # there are only three posts with example as keyword, should not contain post4
+    assert_select 'div.post', { :count => 3 }
+    assert_select 'div.post', { :text => /#{@post4.title}/, :count => 0}
+    get search_path, params: { search: "bears" }
+    # only last post contains bears keyword
+    assert_select 'div.post', { :text => /#{@post4.title}/ }
+    assert_select 'div.post', { :count => 1}
+    get search_path, params: { search: "alex" }
+    # there are two psots with alex as author
+    assert_select 'div.post', { :text => /alex/, :count => 2 }
+    assert_select 'div.post', { :text => /david/, :count => 0}
   end
 end

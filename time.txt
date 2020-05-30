@@ -17,3 +17,4 @@
 21 05 2020 Partially implemented search posts functionality, 2 hr, David
 23 05 2020 Search posts fully implemeneted, 1 hr, David
 21 05 2020 Implemented forgot password functionality, 6 hr, Alex
+30 05 2020 Implement Delete comments, 1 hr, David

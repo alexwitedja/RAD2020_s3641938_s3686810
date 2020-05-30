@@ -14,6 +14,12 @@ class CommentsController < ApplicationController
     end
   end
 
+  def destroy
+    Comment.find(params[:id]).destroy
+    flash[:success] = "Comment Deleted"
+    redirect_back(fallback_location: root_path)
+  end
+
   private
 
     def logged_in_user
@@ -22,4 +28,6 @@ class CommentsController < ApplicationController
         redirect_to "/home"
       end
     end
+
+
 end

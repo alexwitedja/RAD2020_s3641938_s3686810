@@ -5,7 +5,7 @@ class NewPostTest < ActionDispatch::IntegrationTest
     @user = users(:alex)
   end
 
-  test "Non logged in users can't get to the new post form" do
+  test "users can't get to the new post form without logging in" do
     get new_post_path
     follow_redirect!
     # Will redirect to home_path

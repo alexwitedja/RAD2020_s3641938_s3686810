@@ -1,9 +1,9 @@
-<div class="home-cards">
+<div class="home-cards recent-users">
   <p>Recent Members</p>
   <% users = get_recent_members %>
   <% users.each do |user| %>
     <div class="col-md-2" style="margin:0 2vh;">
-      <%= link_to user_avatar(user, size: 50), get_user(user.id)%>
+      <%= link_to user_avatar(user, size: 50), get_user(user.id) %>
       <p><%= user.name %></p>
     </div>
   <% end %>

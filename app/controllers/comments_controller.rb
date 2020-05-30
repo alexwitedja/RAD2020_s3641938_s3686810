@@ -7,8 +7,11 @@ class CommentsController < ApplicationController
     user_id = current_user.id
 
     new_comment = Comment.create({content: new_content, post_id: post_id, user_id: user_id})
-    new_comment.save
-    redirect_to post_url(post_id)
+    if new_comment.save
+      redirect_to post_url(post_id)
+    else
+      flash[:alert] = "Comment content can't be empty."
+    end
   end
 
   private

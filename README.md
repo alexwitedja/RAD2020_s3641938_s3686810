@@ -13,3 +13,4 @@ See time.txt
 https://david-alex-a1.herokuapp.com/
 
 ## Heroku logs
+See deployment_log.txt

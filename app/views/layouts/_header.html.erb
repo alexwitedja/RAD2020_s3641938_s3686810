@@ -7,7 +7,7 @@
       <ul class="nav navbar-nav navbar-center">
         <li><%= link_to "Home",   '/home' %></li>
         
-        <li>
+        <li class="news-dropdown">
           <%= form_for("#") do |f| %>
           <%= f.collection_select :topic, get_popular_topics, :to_s, :to_s, class: 'form-control' %>
           <% end %>

@@ -14,16 +14,16 @@ class StaticPagesController < ApplicationController
     # Check if in array remove, otherwise add to array.
     toggle_topic(@topic)
     controller = request.headers["HTTP_REFERER"]
-    if controller == "http://localhost:3000/selected"
-      redirect_to '/selected'
-    else
+    if !controller.nil?
       redirect_to request.referrer
+    else
+      redirect_to '/selected'
     end
   end
 
   def search
     if params[:search].blank?
-      redirect_to(root_path, alert: "Empty field!") and return
+      redirect_to(home_path, alert: "Empty field!") and return
     else
       @parameter = params[:search].downcase
       user = User.find_by(name: @parameter)

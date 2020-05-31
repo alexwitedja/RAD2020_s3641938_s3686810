@@ -4,3 +4,10 @@ alex:
   email: alex@hotmail.co.id
   password_digest: <%= User.digest('password') %>
   mobile: 1234567890
+
+david:
+  name: david
+  id: 2
+  email: david@hotmail.com.au
+  password_digest: <%= User.digest('password') %>
+  mobile: 0987654321
